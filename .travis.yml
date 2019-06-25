@@ -20,8 +20,10 @@ env:
 
 script: "mvn clean install -DskipTests"
 deploy:
-  - provider: script
-    script: ./.travis.deploy.sh
-    skip_cleanup: true
-    on:
-      branch: master
+  provider: releases
+  api_key:
+    secure: $API_KEY
+  file: "target/*.jar"
+  skip_cleanup: true
+  on:
+    tags: true
