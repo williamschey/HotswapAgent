@@ -23,7 +23,7 @@ deploy:
   provider: releases
   api_key:
     secure: $API_KEY
-  file: "target/*.jar"
+  file: "hotswap-agent/target/*.jar"
   skip_cleanup: true
   on:
     tags: true
