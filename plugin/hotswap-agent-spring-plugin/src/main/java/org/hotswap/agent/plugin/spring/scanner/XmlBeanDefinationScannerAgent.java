@@ -113,6 +113,11 @@ public class XmlBeanDefinationScannerAgent {
         if (paths.length == 2) {
             return paths[1];
         }
+        
+        paths = filePath.split("src/main/config/");
+        if (paths.length == 2) {
+            return paths[1];
+        }
 
         paths = filePath.split("WEB-INF/classes/");
         if (paths.length == 2) {
